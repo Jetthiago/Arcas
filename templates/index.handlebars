@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Arcas - {{title}}</title>
+	<script type="text/javascript">
+		/*<!link rel="stylesheet" type="text/css" href="index.cssroot" />
+		<!link rel="stylesheet" type="text/css" href="common.cssroot" />*/
+	</script>
+	<meta name="viewport" content="width=device-width" />
+	<meta charset="utf-8" />
+	<style type="text/css">
+		body{
+			background: #101010;
+			color: #fff;
+			font-size: 16px;
+		}
+		h2{
+			margin: 0;
+			margin-left: 1em;
+			margin-top: 0.5em
+		}
+		.title{ padding: 0.3em; }
+		.content{
+			background: #212121;
+			width: 90%;
+			margin-left: auto;
+			margin-right: auto;
+			padding-bottom: 1em;
+		}
+		.parents-container{
+			margin: 0.5em;
+			margin-right: 1em;
+		}
+		.pathname{
+			text-decoration: none;
+			font-size: 1.3em;
+			color: #fff;
+		}
+		.container-link{
+			background: #323232;
+			width: 95%;
+			margin-top: 0.2em;
+			margin-bottom: 0.4em;
+			margin-left: auto;
+			margin-right: auto;
+			padding: 3px;
+		}
+		.link{
+			color: #989898;
+			font-size: 1.2em;
+			text-decoration: none;
+		}
+		.directory{ color: #989898; }
+		.file{ color: #fff; }
+		.parent{ margin: 85%; }
+		.button{
+			color: #fff;
+			background: #323232;
+			padding: 0.6em;
+			margin: 3px;
+			border: none;
+			cursor: pointer;
+		}
+		.video{
+			text-align: center;
+			width: 100vw;
+			margin-left: auto;
+			margin-right: auto;
+		}
+		.player{ width: 98vw; }
+		.upload-tile{
+			margin: 0.1em;
+		}
+		.upload{
+			margin: 1em;
+			color: #fff;
+			background: #323232;
+		}
+		.upload input{
+			margin: 0.5em;
+			margin-bottom: 0.1em;
+			background: #323232;
+			color: #fff;
+		}
+		.upload span{ margin-left: 0.5em }
+
+		.download-tile{
+			margin: 0.1em;
+		}
+		.download{
+			margin: 1em;
+			color: #fff;
+			background: #323232;
+		}
+		.download input{
+			margin: 0.5em;
+			margin-bottom: 0.1em;
+			background: #323232;
+			width: 80%;
+			color: #fff;
+		}
+		.download span{ margin-left: 0.5em }
+
+		@media only screen and (max-width: 1000px){
+			body{ margin: 0px; }
+			.title{ font-size: 1.1em; }
+			.pathname{ font-size: 1em; }
+			.content{
+				width: 100%;
+				margin: 0px;
+			}
+			.container-link{
+				margin-top: -1em;
+				white-space: pre-wrap;
+				word-wrap: break-word;
+			}
+			.link{ 
+				font-size: 1em;
+				padding: 0.2em;
+			}
+			.parent{ margin: 80%; }
+			/*.video{
+				overflow: hidden;
+				width: 100vw;
+				height: 100vh;
+				padding: 0;
+				margin: 0;
+				border: 0;
+			}
+			.player{
+				transform: rotate(90deg) translate(0vw,0vh);
+				width: auto;
+				height: auto;
+				max-width: 100vw;
+				max-height: 100vh; 
+				border: 0;
+				margin: 0;
+				padding: 0;
+			}*/
+		}
+	</style>
+</head>
+<body>
+<div class="content">
+	<div class="title"><h2>Arcas - {{title}}</h2></div>
+	<hr color="#fff" noshade/>
+	<div class="parents-container">
+	{{#each parents}}
+		<a class="pathname" href="{{path}}">{{name}}</a>
+	{{/each}}
+	</div>
+	<div class="list">
+		{{#each dir}}
+			<a class="link {{class}}" href="{{path}}"><div class="container-link">{{name}}</div></a>
+		{{/each}}
+	</div>
+	<a class="parent" href="/.."><button class="button">Back to root</button></a>
+
+	<div class="upload">
+		<form action="#" enctype="multipart/form-data" method="post">
+			<a class="upload-title">Upload to "uploads" path:</a><br/>
+			<span>Title: </span>
+			<input type="text" name="title" autocomplete="off" placeholder="Optional, default: filename.ext" /><br/>
+			<input type="file" name="upload" multiple="multiple" /><br/>
+			<input type="submit" value="Upload" />
+		</form>
+	</div>
+
+	<div class="download">
+		<form action="#" method="get">
+			<label class="download-tile">Give a url to the server download it:</label><br/>
+			<span>URL: </span>
+			<input type="url" name="dload" autocomplete="off" placeholder="" /><br/>
+			<span>Destination path: </span>
+			<input type="text" name="ddest" autocomplete="off" placeholder="Optional, default: /download/filename.ext" /><br/>
+			<input type="submit" style="width: auto" value="Download" /><br/>
+		</form>
+	</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,73 @@
+body{
+	background: #101010;
+	color: #fff;
+	font-size: 16px;
+}
+h2{ margin-left: 1em; }
+.title{ padding: 0.3em; }
+.content{
+	background: #212121;
+	width: 90%;
+	margin-left: auto;
+	margin-right: auto;
+}
+.pathname{
+	font-size: 1.3em;
+	margin-left: 1em;
+}
+.container-link{
+	background: #323232;
+	width: 95%;
+	margin-top: 0.2em;
+	margin-bottom: 0.4em;
+	margin-left: auto;
+	margin-right: auto;
+	padding: 3px;
+}
+.link{
+	color: #989898;
+	font-size: 1.2em;
+}
+.directory{ color: #989898; }
+.file{ color: #fff; }
+.video{
+	text-align: center;
+	width: 100vw;
+	margin-left: auto;
+	margin-right: auto;
+}
+.player{ width: 98vw; }
+@media only screen and (max-width: 1000px){
+	body{ margin: 0px; }
+	.title{ font-size: 1.5em; }
+	.pathname{ font-size: 2em; }
+	.content{
+		width: 100%;
+		margin: 0px;
+	}
+	.container-link{
+		margin-top: 2em;
+		white-space: pre-wrap;
+		word-wrap: break-word;
+	}
+	.link{ font-size: 3em; }
+	/*.video{
+		overflow: hidden;
+		width: 100vw;
+		height: 100vh;
+		padding: 0;
+		margin: 0;
+		border: 0;
+	}
+	.player{
+		transform: rotate(90deg) translate(0vw,0vh);
+		width: auto;
+		height: auto;
+		max-width: 100vw;
+		max-height: 100vh; 
+		border: 0;
+		margin: 0;
+		padding: 0;
+	}*/
+
+}
