@@ -1,0 +1,18 @@
+{
+	"port": 8181,
+	"root": "",
+	"ignore": [
+		"my_modules",
+		"node_modules",
+		"templates",
+		"src",
+		"Arcas.bat",
+		"config.json",
+		"index.js",
+		"test.js",
+		"nodemon.json",
+		"package.json",
+		"src",
+		"!"
+	]
+}
